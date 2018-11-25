@@ -15,26 +15,26 @@ const deleteButton = function () {
 const handleSubmit = function (event) {
   event.preventDefault();
 
-  // get values from form
-  const inputFirstName = event.target.firstName.value;
-  const inputLastName = event.target.lastName.value;
+
+  const inputFullName = event.target.fullName.value;
+  const inputValue = event.target.value.value;
   const inputPosition = event.target.position.value;
 
   const footballersAdded = document.querySelector('#footballers-added');
 
-  //create new blank elements
+
   const squadListItem = document.createElement('section');
-  const firstName = document.createElement('h1');
-  const lastName = document.createElement('h2');
+  const fullName = document.createElement('h1');
+  const value = document.createElement('h2');
   const position = document.createElement('h3');
 
-  // set the text of new blank elements using values from form (above)
-  firstName.textContent = inputFirstName;
-  lastName.textContent = inputLastName;
-  position.textContent = inputPosition;
 
-  squadListItem.appendChild(firstName);
-  squadListItem.appendChild(lastName);
+  fullName.textContent = `Full Name: ${inputFullName}`;
+  value.textContent = `Value: ${inputValue} £`;
+  position.textContent = `Position: ${inputPosition}`;
+
+  squadListItem.appendChild(fullName);
+  squadListItem.appendChild(value);
   squadListItem.appendChild(position);
 
   footballersAdded.appendChild(squadListItem);
